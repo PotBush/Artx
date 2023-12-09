@@ -8,6 +8,9 @@ mv /usr/share/applications/bssh.desktop /usr/share/applications/bssh.desktop.bac
 mv /usr/share/applications/bvnc.desktop /usr/share/applications/bvnc.desktop.back
 mv /usr/share/applications/avahi-discover.desktop /usr/share/applications/avahi-discover.desktop.back
 
+mv /usr/share/applications/qv4l2.desktop /usr/share/applications/qv4l2.desktop.back
+mv /usr/share/applications/qvidcap.desktop /usr/share/applications/qvidcap.desktop.back
+
 # Qt
 mv /usr/share/applications/assistant.desktop /usr/share/applications/assistant.desktop.back
 mv /usr/share/applications/designer.desktop /usr/share/applications/designer.desktop.back
