@@ -1,2 +1,2 @@
 # Artx
-prova
+dots files for Hyprland 
