@@ -15,21 +15,21 @@ window#waybar {
 }
 /*-----module groups----*/
 .modules-right {
-	background-color: rgba(18, 18, 15, 0.8);
+	background-color: transparent;
     border-style: solid;
     border-width: 2px;
     border-radius: 8px;
     border-color: #ffffff;
 }
 .modules-center {
-	background-color: rgba(18, 18, 15, 0.8);
+	background-color: transparent;
     border-style: solid;
     border-width: 2px;
     border-radius: 8px;
     border-color: #ffffff;
 }
 .modules-left {
-	background-color: rgba(18, 18, 15, 0.8);
+	background-color: transparent;
     border-style: solid;
     border-width: 2px;
     border-radius: 8px;

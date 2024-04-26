@@ -1,6 +1,3 @@
-[Document 0]
-URL=
-
 [Kate Plugins]
 cmaketoolsplugin=false
 compilerexplorer=false
@@ -35,23 +32,23 @@ textfilterplugin=true
 
 [MainWindow0]
 Active ViewSpace=0
-Kate-MDI-H-Splitter=0,1876,0
+Kate-MDI-H-Splitter=0,1852,0
 Kate-MDI-Sidebar-0-Bar-0-TvList=kate_private_plugin_katefiletreeplugin,kateproject,kateprojectgit,lspclient_symbol_outline
 Kate-MDI-Sidebar-0-LastSize=200
 Kate-MDI-Sidebar-0-SectSizes=0
-Kate-MDI-Sidebar-0-Splitter=977
+Kate-MDI-Sidebar-0-Splitter=914
 Kate-MDI-Sidebar-1-Bar-0-TvList=
 Kate-MDI-Sidebar-1-LastSize=200
 Kate-MDI-Sidebar-1-SectSizes=0
-Kate-MDI-Sidebar-1-Splitter=977
+Kate-MDI-Sidebar-1-Splitter=914
 Kate-MDI-Sidebar-2-Bar-0-TvList=
 Kate-MDI-Sidebar-2-LastSize=200
 Kate-MDI-Sidebar-2-SectSizes=0
-Kate-MDI-Sidebar-2-Splitter=1876
+Kate-MDI-Sidebar-2-Splitter=1852
 Kate-MDI-Sidebar-3-Bar-0-TvList=output,diagnostics,kate_plugin_katesearch,kateprojectinfo,kate_private_plugin_katekonsoleplugin
 Kate-MDI-Sidebar-3-LastSize=200
 Kate-MDI-Sidebar-3-SectSizes=0
-Kate-MDI-Sidebar-3-Splitter=1425
+Kate-MDI-Sidebar-3-Splitter=1896
 Kate-MDI-Sidebar-Style=2
 Kate-MDI-Sidebar-Visible=true
 Kate-MDI-ToolView-diagnostics-Position=3
@@ -81,25 +78,24 @@ Kate-MDI-ToolView-lspclient_symbol_outline-Visible=false
 Kate-MDI-ToolView-output-Position=3
 Kate-MDI-ToolView-output-Show-Button-In-Sidebar=true
 Kate-MDI-ToolView-output-Visible=false
-Kate-MDI-V-Splitter=0,977,0
+Kate-MDI-V-Splitter=0,914,0
 ToolBarsMovable=Disabled
 
 [MainWindow0 Settings]
 ToolBarsMovable=Disabled
-WindowState=14
+WindowState=10
 
 [MainWindow0-Splitter 0]
 Children=MainWindow0-ViewSpace 0
 Orientation=1
-Sizes=1876
+Sizes=1852
 
 [MainWindow0-ViewSpace 0]
-Active View=
-Count=1
-Documents=\\0
+Count=0
+Documents=
 
 [Open Documents]
-Count=1
+Count=0
 
 [Open MainWindows]
 Count=1
