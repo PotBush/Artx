@@ -3,36 +3,112 @@
     font-family: Font Awesome, Roboto, Arial, sans-serif;
     font-size: 14px;
     color: #ffffff;
-    border-radius: 8px;
-}
-
-
-window {
-	/*font-weight: bold;*/
+    border-radius: 0px;
 }
 window#waybar {
+    background-color: rgba(0,0,0,0.8);
+    border-bottom: 0px solid #ffffff;
+    /* color: #FFFFFF; */
     background: transparent;
+    transition-property: background-color;
+    transition-duration: .5s;
 }
+
+#workspaces {
+    margin: 3px 7px 3px 3px;
+    padding: 5px;
+    border-radius: 15px;
+    border: 2px;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border-radius: 15px;
+    border: 0px;
+    color: #ffffff;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.4;
+}
+
+#workspaces button.active {
+    color: #0cf;
+    background: #0cf;
+    border-radius: 15px;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
+#workspaces button:hover {
+    color: #ffffff;
+    background: transparent;
+    border-radius: 15px;
+    opacity:0.7;
+}
+
+
+
+/* -----------------------------------------------------
+ * Taskbar
+ * ----------------------------------------------------- */
+
+ #taskbar {
+    background: transparent;
+    margin: 3px 15px 3px;
+    padding:5px;
+    border-radius: 15px;
+    font-weight: normal;
+    font-style: normal;
+    opacity:0.8;
+    border: 2px solid #ffffff;
+}
+
+#taskbar button {
+    margin:0;
+    border-radius: 15px;
+    padding: 0px 5px 0px 5px;
+}
+
+/* -----------------------------------------------------
+ * Clock
+ * ----------------------------------------------------- */
+
+ #clock {
+    background-color: transparent;
+    font-size: 16px;
+    color: #ffffff;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 3px 15px 3px;
+    opacity:0.8;
+    border:2px solid #ffffff;   
+}
+
 /*-----module groups----*/
 .modules-right {
-	background-color: transparent;
+	background: transparent;
     border-style: solid;
-    border-width: 2px;
-    border-radius: 8px;
+    border-width: 0px;
+    border-radius: 16px;
     border-color: #ffffff;
 }
 .modules-center {
-	background-color: transparent;
+	background-color:transparent;
     border-style: solid;
-    border-width: 2px;
-    border-radius: 8px;
-    border-color: #ffffff;
+    border-width: 0px;
+    border-radius: 16px;
 }
 .modules-left {
 	background-color: transparent;
     border-style: solid;
-    border-width: 2px;
-    border-radius: 8px;
+    border-width: 0px;
+    border-radius: 16px;
     border-color: #ffffff;
 }
 

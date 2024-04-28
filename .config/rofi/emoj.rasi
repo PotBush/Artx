@@ -1,0 +1,155 @@
+/**
+  _____        __ _                 _        
+ |  __ \      / _(_)     /\        | |       
+ | |__) |___ | |_ _     /  \   _ __| |___  __
+ |  _  // _ \|  _| |   / /\ \ | '__| __\ \/ /
+ | | \ \ (_) | | | |  / ____ \| |  | |_ >  < 
+ |_|  \_\___/|_| |_| /_/    \_\_|   \__/_/\_\
+
+ **/
+/*****----- Configuration -----*****/
+configuration {
+   modi:                       "";
+    show-icons:                 true;
+    icon-theme:                 "Papirus";
+    display-drun:               "";
+    display-run:                "";
+    display-filebrowser:        "";
+    display-window:             "";
+	drun-display-format:        "{name}";
+	window-format:              "{w} · {c} · {t}";
+ }
+
+ @theme "/dev/null"
+
+/*****----- Global Properties -----*****/
+ * {
+    font:                         "JetBrainsMono Nerd Font Medium 12.5";
+    bg:                           #181818;
+    bg-alt:                       #181818;
+    bg-selected:                  #18181869; 
+    fg:                           #ffffff;
+    fg-alt:                       #ffffff69;
+
+
+    border:                         2px;
+    border-radius:                  15px;
+    margin:                         0;
+    padding:                        0;
+    spacing:                        0;
+ }
+
+/*****----- Main Window -----*****/
+ window {
+   //
+   //fullscreen: true;
+   //transparency: "real";
+   //background-color: @bg;
+
+   transparency:                    "real";
+   location:                        center;
+   anchor:                          center;
+   fullscreen:                      false;
+   width:                           800px;
+   x-offset:                        0px;
+   y-offset:                        0px;
+
+   /* properties for all widgets */
+   color:                           @bg;
+   spacing:                         0;
+   padding:                         0px;
+   border:                          2px;
+   border-radius:                   8px;
+   border-color:                    #FFFFFF;
+   children:                        [mainbox];
+   background-color:                transparent;
+   orientation:                     horizontal;
+   
+ }
+
+/*****----- Main Box -----*****/
+ mainbox {
+   enabled:                     true;
+   spacing:                     0px;
+   background-color: @bg;
+   orientation:                 vertical;
+   children: [inputbar, listbox];
+ }
+
+listbox {
+    spacing:                     0px;
+    padding:                     1px;
+    background-color:            transparent;
+    orientation:                 vertical;
+    children:                    [ listview ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+   spacing:                     0px;
+   padding:                     0px 40px;
+   background-color:            @bg;
+   children: [prompt, entry];
+ }
+
+ prompt {
+   enabled:                     true;
+   expand:                      false;
+   str:                         "";
+   background-color:            transparent;
+   border:                      2px;
+   border-color:                #FFFFFF;
+   
+   enabled:                     true;
+   padding:                     12 0 0 12;
+   text-color:                  @fg;
+ }
+
+ entry {
+   padding:                       12;
+   background-color:              @bg-alt;
+   text-color:                    @fg;
+ }
+
+ element {
+   padding:                      8 12;
+   background-color:             transparent;
+   text-color:                   @fg-alt;
+ }
+
+ element selected {
+   text-color:                  @fg;
+   border:                      2px;
+   border-radius:               8px;
+   border-color:                #FFFFFF;
+   border-radius:               15px;
+   background-color:            @bg-selected;
+ }
+
+ element-text {
+   background-color:            transparent;
+   text-color:                  inherit;
+   vertical-align:              0.5;
+ }
+
+ element-icon {
+   size:                       35;
+   padding: 0 10 0 0;
+   background-color:          transparent;
+ }
+
+ 
+
+ 
+
+ listview {
+   background-color:          @bg;
+   columns:                   2;
+   lines:                     5;
+ }
+
+ 
+
+ 
+
+ /* vim: ft=sass

@@ -1,86 +1,162 @@
+/**
+  _____        __ _                 _        
+ |  __ \      / _(_)     /\        | |       
+ | |__) |___ | |_ _     /  \   _ __| |___  __
+ |  _  // _ \|  _| |   / /\ \ | '__| __\ \/ /
+ | | \ \ (_) | | | |  / ____ \| |  | |_ >  < 
+ |_|  \_\___/|_| |_| /_/    \_\_|   \__/_/\_\
+
+ **/
+/*****----- Configuration -----*****/
 configuration {
-   display-drun: "Applications:";
-   display-window: "Windows:";
-   drun-display-format: "{name}";
-   font: "JetBrainsMono Nerd Font Medium 12.5";
-   modi: "window,run,drun,filebrowser";
-   show-icons: true;
-   icon-theme: "Papirus";
+   modi:                       "drun,filebrowser,run";
+    show-icons:                 true;
+    display-drun:               "";
+    display-filebrowser:        "";
+    display-run:                "";
+    icon-theme:                 "Papirus";
+	//drun-display-format:        "{name}";
+	//window-format:              "{w} · {c} · {t}";
  }
 
  @theme "/dev/null"
 
+/*****----- Global Properties -----*****/
  * {
-   bg: #181818;
-   bg-alt: #181818;
-   bg-selected: #18181869;
+    font:                         "JetBrainsMono Nerd Font Medium 12.5";
+    bg:                           transparent;
+    bg-alt:                       #181818;
+    bg-selected:                  #18181869; 
+    fg:                           #ffffff;
+    fg-alt:                       #ffffff69;
 
-   fg: #ffffff;
-   fg-alt: #ffffff69;
-
-
-   border: 1;
-   border-radius: 8px;
-   margin: 1;
-   padding: 1;
-   spacing: 0;
+    transparency:                 "real";                 
+    border:                       2px;
+    border-radius:                8px;
+    margin:                       0px;
+    padding:                      0px;
+    spacing:                      0px;
  }
 
+/*****----- Main Window -----*****/
  window {
-   width: 800px;
-   background-color: @bg;
+   //fullscreen: true;
+   //background-color: @bg;
+
+   transparency:                  "real";
+   location:                      center;
+   anchor:                        center;
+   fullscreen:                    false;
+   width:                         800px;
+   x-offset:                      0px;
+   y-offset:                      0px;
+
+   /* properties for all widgets */
+   spacing:                       0;
+   padding:                       2px;
+   border:                        2px;
+   border-radius:                 8px;
+   border-color:                  @fg;
+   children:                      [mainbox];
+   background-color:              @bg-alt;
+   orientation:                   horizontal;
+
+   transparency:                  "real";
+   
  }
 
- element {
-   padding: 8 12;
-   background-color: transparent;
-   text-color: @fg-alt;
- }
-
- element selected {
-   text-color: @fg;
-   background-color: @bg-selected;
- }
-
- element-text {
-   background-color: transparent;
-   text-color: inherit;
-   vertical-align: 0.5;
- }
-
- element-icon {
-   size: 35;
-   padding: 0 10 0 0;
-   background-color: transparent;
- }
-
- entry {
-   padding: 12;
-   background-color: @bg-alt;
-   text-color: @fg;
- }
-
- inputbar {
-   children: [prompt, entry];
-   background-color: @bg;
- }
-
- listview {
-   background-color: @bg;
-   columns: 2;
-   lines: 12;
- }
-
+/*****----- Main Box -----*****/
  mainbox {
-   children: [inputbar, listview];
-   background-color: @bg;
+   enabled:                       true;
+   spacing:                       0px;
+   background-color:              @bg;
+   orientation:                   vertical;
+   children:                      [inputbar, listbox];
+ }
+
+listbox {
+    spacing:                      5px;
+    padding:                      5px;
+    margin:                       5px;
+    border:                       0px;
+    border-color:                  @fg;
+    background-color:             transparent;
+    orientation:                  vertical;
+    children:                     [ mode-switcher, message, listview ];
+}
+mode-switcher {
+   orientation:                    horizontal;
+   background-color:               @bg;
+   spacing:                        5px;
+   margin:                         2;
+}
+
+
+/*****----- Inputbar -----*****/
+inputbar {
+   spacing:                       10px;
+   padding:                       60px 40px;
+   margin:                        2px;
+   background-image:              url("~/.config/hypr/Wallpaper/01.png", width);
+   background-color:              @bg;
+   children:                      [prompt, entry];
  }
 
  prompt {
-   background-color: @bg-alt;
-   enabled: true;
-   padding: 12 0 0 12;
-   text-color: @fg;
+   enabled:                       true;
+   expand:                        false;
+   background-color:              transparent;
+   enabled:                       true;
+   padding:                       10 0 0  10;
+   text-color:                    #FFFFFF;
+   border-radius:                 60px;
  }
+
+ entry {
+   padding:                       12;
+   background-color:              @bg-alt;
+   text-color:                    @fg;
+ }
+
+ element {
+   padding:                      8 12;
+   background-color:             transparent;
+   text-color:                   @fg-alt;
+ }
+
+ element selected {
+   text-color:                  @fg;
+   border:                      2px;
+   border-radius:               8px;
+   border-color:                @fg;
+   
+   background-color:            @bg-selected;
+ }
+
+ element-text {
+   background-color:            transparent;
+   text-color:                  inherit;
+   vertical-align:              0.5;
+ }
+
+ element-icon {
+   size:                       35;
+   padding: 0 10 0 0;
+   background-color:          transparent;
+ }
+
+ 
+
+ 
+
+ listview {
+   background-color:          @bg;
+   columns:                   2;
+   lines:                     5;
+ }
+
+ 
+
+ 
 
  /* vim: ft=sass

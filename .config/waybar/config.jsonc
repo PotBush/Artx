@@ -4,16 +4,19 @@
     "height": 20, // Waybar height (to be removed for auto height)
     "width": 1900, // Waybar width
     //"spacing": 8, // Gaps between modules (4px)
-    //"output": "DP-1", // to output for bar
+    "output": "DP-1", // to output for bar
     // Choose the order of the modules
     
     "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
     
     "modules-center": ["clock"],
     
-    "modules-right": ["pulseaudio","network","cpu","memory","battery"],
+    "modules-right": ["pulseaudio","network","cpu","memory","battery","battery#bat2","custom/exit"],
     
     "hyprland/workspaces": {
+        "on-click": "activate",
+        "active-only": false,
+        "all-outputs": true,
         "format": "{name}: {icon}",
     	"format-icons": {
             "urgent": "",
@@ -21,18 +24,17 @@
     		"active": "",
     		"default": ""
     	},
-        "on-click": "activate",
     	"on-scroll-up": "hyprctl dispatch workspace r-1",
     	"on-scroll-down": "hyprctl dispatch workspace r+1",
         "persistent-workspaces": {
-            "*": [ 2,3,4,5,6 ] // 2-5 on every monitor
+            "*": [ 2,3,4,5 ] // 2-5 on every monitor
             //"HDMI-A-1": [ 1 ]  but only workspace 1 on HDMI-A-1
         }
     },
     "wlr/taskbar": {
         "all-outputs": true,
         "format": "{icon}",
-	    "icon-size": 16,
+	    "icon-size": 18,
 	    "icon-theme": "Papirus",
 	    "tooltip-format": "{title}",
 	    "on-click": "activate",
@@ -108,6 +110,14 @@
     "memory": {
         "format": "{}% "
     },
+    "custom/exit": {
+        "format": "{icon}",
+        "format-icons": " ⏻  ",
+        "icon-size": 18,
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
@@ -134,6 +144,9 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
