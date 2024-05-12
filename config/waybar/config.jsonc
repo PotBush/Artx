@@ -11,13 +11,13 @@
     
     "modules-center": ["clock"],
     
-    "modules-right": ["pulseaudio","network","cpu","memory","battery","battery#bat2","custom/exit"],
+    "modules-right": ["custom/updates","pulseaudio","network","cpu","memory","battery","battery#bat2","custom/exit"],
     
     "hyprland/workspaces": {
         "on-click": "activate",
         "active-only": false,
         "all-outputs": true,
-        "format": "{name}: {icon}",
+        "format": "{name}",
     	"format-icons": {
             "urgent": "",
     		"focused": "",
@@ -31,14 +31,28 @@
             //"HDMI-A-1": [ 1 ]  but only workspace 1 on HDMI-A-1
         }
     },
+
+    // Updates Count
+    "custom/updates": {
+        "format": "  {}",
+        "tooltip-format": "{}",
+        "escape": true,
+        "return-type": "json",       
+        "exec": "~/dotfiles/scripts/updates.sh",
+        "restart-interval": 60,
+        "on-click": "alacritty -e ~/dotfiles/scripts/installupdates.sh",
+        "tooltip": false
+    },
+
+
+    // taskbar
     "wlr/taskbar": {
-        "all-outputs": true,
         "format": "{icon}",
-	    "icon-size": 18,
-	    "icon-theme": "Papirus",
-	    "tooltip-format": "{title}",
-	    "on-click": "activate",
-	    "on-click-middle": "close"
+        "icon-size": 20,
+        "icon-theme": "papirus",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close"
     },
     
     // Modules configuration

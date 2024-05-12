@@ -9,13 +9,9 @@
  **/
 /*****----- Configuration -----*****/
 configuration {
-   modi:                       "";
-    show-icons:                 true;
-    icon-theme:                 "Papirus";
-    display-drun:               "";
-    display-run:                "";
-    display-filebrowser:        "";
-    display-window:             "";
+  display:                    "";
+  show-icons:                 true;
+  icon-theme:                 "Papirus";
 	drun-display-format:        "{name}";
 	window-format:              "{w} · {c} · {t}";
  }
@@ -71,9 +67,10 @@ configuration {
  mainbox {
    enabled:                     true;
    spacing:                     0px;
-   background-color: @bg;
+   background-color:            @bg;
+   border:                      0;
    orientation:                 vertical;
-   children: [inputbar, listbox];
+   children:                    [inputbar, listbox];
  }
 
 listbox {
@@ -86,23 +83,25 @@ listbox {
 
 /*****----- Inputbar -----*****/
 inputbar {
-   spacing:                     0px;
-   padding:                     0px 40px;
-   background-color:            @bg;
-   children: [prompt, entry];
+   spacing:                       10px;
+   padding:                       60px 40px;
+   margin:                        2px;
+   background-image:              url("~/.config/hypr/Wallpaper/01.png", width);
+   background-color:              @bg;
+   children:                      [prompt, entry];
  }
 
  prompt {
    enabled:                     true;
    expand:                      false;
-   str:                         "";
+   str:                         ":";
    background-color:            transparent;
-   border:                      2px;
+   border:                      0px;
    border-color:                #FFFFFF;
    
    enabled:                     true;
    padding:                     12 0 0 12;
-   text-color:                  @fg;
+   text-color:                  #FFFFFF;
  }
 
  entry {
@@ -121,8 +120,8 @@ inputbar {
    text-color:                  @fg;
    border:                      2px;
    border-radius:               8px;
-   border-color:                #FFFFFF;
-   border-radius:               15px;
+   border-color:                #0cf;
+   
    background-color:            @bg-selected;
  }
 

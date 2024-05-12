@@ -1,3 +1,13 @@
+/*
+ * __        __          _                  ____  _         _       
+ * \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___  
+ *  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \ 
+ *   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/ 
+ *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___| 
+ *                 |___/                              |___/         
+ *  
+*/
+
 * {
     border: none;
     font-family: Font Awesome, Roboto, Arial, sans-serif;
@@ -6,7 +16,7 @@
     border-radius: 0px;
 }
 window#waybar {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.2);
     border-bottom: 0px solid #ffffff;
     /* color: #FFFFFF; */
     background: transparent;
@@ -15,18 +25,19 @@ window#waybar {
 }
 
 #workspaces {
-    margin: 0px 0px 0px 0px;
-    padding: 5px;
+    margin: 2px 1px 3px 1px;
+    padding: 0px 1px;
     border-radius: 15px;
-    border: 2px;
+    border: 0px;
     font-weight: bold;
     font-style: normal;
+    opacity: 0.8;
     font-size: 16px;
     color: #ffffff;
 }
 
 #workspaces button {
-    padding: 0px 2px;
+    padding: 0px 5px;
     margin: 4px 3px;
     border-radius: 15px;
     border: 0px;
@@ -52,7 +63,40 @@ window#waybar {
     opacity:0.7;
 }
 
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
 
+ tooltip {
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.2);
+    opacity:0.8;
+    padding:20px;
+    margin:0px;
+}
+
+tooltip label {
+    color: transparent;
+}
+
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
+
+#window {
+    background: #ffffff;
+    margin: 5px 15px 5px 0px;
+    padding: 2px 10px 0px 10px;
+    border-radius: 12px;
+    color:transparent;
+    font-size:16px;
+    font-weight:normal;
+    opacity:0.8;
+}
+
+window#waybar.empty #window {
+    background-color:transparent;
+}
 
 /* -----------------------------------------------------
  * Taskbar
@@ -60,13 +104,13 @@ window#waybar {
 
  #taskbar {
     background: transparent;
-    margin: 3px 15px 3px;
-    padding:5px;
+    margin: 2px 0px 2px 0px;
+    padding:0;
     border-radius: 15px;
     font-weight: normal;
     font-style: normal;
     opacity:0.8;
-    border: 0px solid #ffffff;
+    border: 2px solid #ffffff;
 }
 
 #taskbar button {
@@ -84,8 +128,8 @@ window#waybar {
     font-size: 16px;
     color: #ffffff;
     border-radius: 15px;
-    padding: 5px;
-    margin: 3px 15px 3px;
+    padding: 0px 5px 0px 5px;
+    margin: 2px 0px 2px 0px;
     opacity:0.8;
     border:2px solid #ffffff;   
 }
@@ -112,38 +156,50 @@ window#waybar {
     border-color: #ffffff;
 }
 
+/* -----------------------------------------------------
+ * Workspaces 
+ * ----------------------------------------------------- */
 /*-----modules indv----*/
 #workspaces {
-    padding: 1px 5px;
+    margin: 5px 0px 5px 0px;
+    padding:0;
     background-color: transparent;
     /* background-color: rgba(18, 18, 15, 0.8); */
+    color: #ffffff;
     border: 2px;
     border-radius: 16px;
 }
+
 #workspaces button {
-    padding: 1px 5px;
-    border-radius: 8px;
-    background-color: transparent;
-    /* background-color: rgba(18, 18, 15, 0.8); */
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border-radius: 15px;
+    border: 0px;
+    color: #ffffff;
+    background-color: rgba(255,255,255,0.5);
+    transition: all 0.3s ease-in-out;
+    opacity: 0.4;
 }
+
+#workspaces button.active {
+    color: #181818;
+    text-decoration-color: #181818;
+    background: #00ccff;
+    border-radius: 15px;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
 #workspaces button:hover {
-    /*box-shadow:rgba(18, 18, 18, 0.8);*/
-    background-color: transparent; 
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 8px;
-}
-#workspaces button.focused {
-    background-color: transparent; 
-    /*background-color: rgba(18, 18, 18, 0.8); */
-}
-#workspaces button.active{
-    background-color: transparent;
-    /* background-color: rgba(255, 255, 255, 0.25); */
-    border-radius: 8px;
+    color: #ffffff;
+    background: transparent;
+    border-radius: 15px;
+    opacity:0.7;
 }
 
 
-#clock,
+
 #battery,
 #cpu,
 #memory,
