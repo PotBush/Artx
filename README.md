@@ -17,7 +17,7 @@ List of programs and tools I use.
 | Shell 🐚          | [fish](https://fishshell.com/) / [omf](https://github.com/oh-my-fish/oh-my-fish) |
 | File Manager 📁   | [dolphin](https://apps.kde.org/dolphin/)/[ranger](https://github.com/ranger/ranger)      |
 | Editor 📝         | [neovim](https://github.com/neovim/neovim) / [vs-code](https://code.visualstudio.com/)     |
-|   IDE             |   [Intellij](https://www.jetbrains.com/idea/)    |
+|   IDE 📦            |   [Intellij](https://www.jetbrains.com/idea/)    |
 | Browser 🌐        | [brave](https://brave.com/) / [librewolf](https://librewolf.net/) |
 | Bar 📊            | [waybar](https://github.com/Alexays/Waybar)      |
 | Launcher 🚀       | [rofi](https://github.com/davatorium/rofi)          |
