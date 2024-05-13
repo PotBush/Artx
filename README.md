@@ -26,7 +26,6 @@ List of programs and tools I use.
 | Login Menu 🚪     | [sddm](https://github.com/sddm/sddm)          |
 | Music Player 🎵   | [spotify](https://aur.archlinux.org/packages/spotify-adblock)      |
 | Visualiser 📊     | [vis](https://github.com/dpayne/cli-visualizer)          |
-| Lyrics 🎤         | [sptlrx](https://github.com/raitonoberu/sptlrx)      |
 | Pomodoro 🍅       | [tomato-c](https://github.com/gabrielzschmitz/Tomato.C)      |
 | Others 🌱         | [cbonsai](https://github.com/mhzawadi/homebrew-cbonsai) |
 
