@@ -43,7 +43,7 @@ paru -S hyprland wayland dolphin eww-git fish gcolor3 hyperpiker kitty kvantum n
 ```
 
 ## 📝 Credits
-- Readmi.md file Design: [iXiuny](https://github.com/iXiuny/Artx)
+- Readmi.md file Design: [iXiuny](https://github.com/iXiuny)
 - sddm-theme - sddm theme from [sddm-flower-theme](https://github.com/Keyitdev/sddm-flower-theme)
 
 ## 📸 More Screenshots
