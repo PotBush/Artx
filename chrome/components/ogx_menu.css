@@ -1,0 +1,246 @@
+/* Source file made available under Mozilla Public License v. 2.0 See the main repository for updates as well as full license text. */
+
+:root { --label-color: color-mix(in srgb, var(--arrowpanel-color, var(--lwt-tab-text))80%, transparent); }
+
+/* Size menu Open window not maximized */
+
+#appMenu-popup panelview { 
+    width: 26.5em !important; 
+}
+
+/* Color of icons and labels */
+
+.subviewbutton:not([disabled]), #appMenu-popup toolbarbutton:not([disabled]) .toolbarbutton-text label {
+    -moz-context-properties: fill;
+    fill: var(--label-color) !important;
+    color: var(--label-color) !important;
+}
+
+/* Login button */
+
+#appMenu-fxa-status2:not([fxastatus]) {
+        padding-top: 4px !important;
+    & > #appMenu-fxa-label2 {
+        border-radius: 4px !important;
+}}
+            
+#appMenu-fxa-status2:not([fxastatus]) #appMenu-fxa-label2:hover {
+            background-color: var(--button-hover-bgcolor) !important;
+}
+
+/* Right margin of the shortcut Ctrl + */
+
+#appMenu-popup .subviewbutton[shortcut]::after{
+    padding-inline-end: 22px !important;
+}
+
+/* banner de Actualización disponible */
+
+#appMenu-popup .panel-banner-item:not([disabled]):hover, #appMenu-popup .addon-banner-item:not([disabled]):hover {
+    background: var(--button-active-bgcolor) !important;
+}
+
+/* -------------------------------------------------- Menu on left-top -------------------------------------------------- 
+   ---------------------------------------------------------------------------------------------------------------------- */
+
+@media not (-moz-bool-pref:"firefoxgx.menu.disabled") {
+    
+@media (-moz-platform: windows), (-moz-platform: linux) {
+    :root {
+        --margin-left-icons-personal: 8px !important;
+        --margin-right-icons-personal: 6px !important;
+    }
+    
+/*Position*/
+    
+    :root:not([chromehidden~="toolbar"]) #PanelUI-button {
+        position: fixed;
+        display: flex;
+        top: var(--windowed-top-padding, 0px);
+        left: 0px !important;
+        z-index: 3 !important;
+    }
+    
+/*  Menu size [Open] - maximized and non-maximized windows*/
+    
+    :root[sizemode="maximized"]:not([chromehidden~="toolbar"]) #appMenu-popup panelview {
+        width: 28.5em !important;
+    }
+    
+    #appMenu-popup panelview {
+        width: 25.5em !important;
+    }
+    
+/* Hide menu button in “full screen” mode */
+    
+    :root:is([chromehidden~="toolbar"], [sizemode="fullscreen"])>body>#browser, :root:is([chromehidden~="toolbar"], [sizemode="fullscreen"])>body>#browser-bottombox,
+    :root:is([chromehidden~="toolbar"], [sizemode="fullscreen"])>body>#customization-container {
+        z-index: 3 !important;
+    }
+    
+/* left margin tabs*/
+    
+    :root:not([chromehidden~="toolbar"]) #toolbar-menubar, :root:not([chromehidden~="toolbar"]) #toolbar-menubar[autohide="true"]+#TabsToolbar {
+        padding-inline-start: var(--padding-left-tab) !important;
+    }
+
+/* Menu button size */
+    
+    :root:not([chromehidden~="toolbar"]) #PanelUI-menu-button {
+        padding: var(--margin-top-personal) 0 0 0 !important;
+        max-height: var(--tab-height-personal) !important;
+        min-height: var(--tab-height-personal) !important;
+    }
+    
+/* menu :hover and open */
+    
+    :root:not([chromehidden~="toolbar"]) #PanelUI-menu-button>.toolbarbutton-badge-stack {
+        max-height: var(--tab-height-personal) !important;
+        min-height: var(--tab-height-personal) !important;
+    }
+    
+    :root:not([chromehidden~="toolbar"]) #PanelUI-menu-button:not([open]):hover>.toolbarbutton-badge-stack {
+        background-color: var(--toolbarbutton-hover-personal) !important;
+        border-radius: 0px !important;
+    }
+    
+    :root:not([chromehidden~="toolbar"]) #PanelUI-menu-button[open]>.toolbarbutton-badge-stack {
+        background-image: var(--noise-urlbar-personal) !important;
+        background-color: var(--arrowpanel-background) !important;
+        border-radius: 0px !important;
+        border-color: transparent !important;
+        width: 28.5em !important;
+    }
+
+/* Logo */
+    
+    :root:not([chromehidden~="toolbar"]) #PanelUI-menu-button .toolbarbutton-badge-stack {
+        list-style-image: url("../icons/foxmenu.svg") !important;
+        display: -moz-box !important;
+        max-height: var(--tab-height-personal) !important;
+        min-width: var(--padding-left-tab) !important;
+        max-width: var(--padding-left-tab) !important;
+        -moz-box-pack: center !important;
+        fill: var(--general-color) !important;
+        border: 1px solid transparent !important;
+    }
+    
+    :root:not([chromehidden~="toolbar"]) #PanelUI-menu-button image {
+        margin-top: -1px !important;
+        min-height: 18px !important;
+        min-width: 18px !important;
+        margin-inline-start: 2px !important;
+    }
+    
+/* Label Menú */
+    
+    :root:not([chromehidden~="toolbar"]) #PanelUI-menu-button > stack{
+        display: flex;
+        align-items: center !important;
+    }
+    
+    :root:not([chromehidden~="toolbar"]) #PanelUI-menu-button>stack::after {
+        width: var(--padding-left-tab) !important;
+        content: var(--menu-label);
+        color: var(--label-color) !important;
+        padding-inline-start: var(--margin-right-icons-personal) !important;
+        padding-block: 6px !important;
+        text-shadow: none !important;
+    }
+    
+/* Padding top to make room for Label menu row */
+    
+    :root:not([chromehidden~="toolbar"])[sizemode="maximized"] #appMenu-popup>panelmultiview>box>box>panelview {
+        padding-top: calc(-5px + var(--tab-height-personal)) !important;
+    }
+    
+/* Margin top to raise the menu [open] */
+    
+    :root:not([chromehidden~="toolbar"])[sizemode="maximized"] #appMenu-popup {
+        appearance: none !important;
+        margin-top: calc(-2px - var(--tab-height-personal)) !important;
+        clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0 3px, calc(var(--padding-left-tab) + 2px) 3px,
+                   calc(var(--padding-left-tab) + 2px) calc(var(--tab-height-personal) + 1px), 0 calc(var(--tab-height-personal) + 1px),
+                   0 100%, 100% 100%, 100% 0%);
+        --arrowpanel-menuitem-padding: 6px !important;
+    }
+    
+    :root:is([sizemode="maximized"]):not([tabsintitlebar], [chromehidden~="toolbar"]) #appMenu-popup {
+        margin-top: calc(-1px - var(--tab-height-personal) + var(--tab-block-margin)) !important;
+    }
+    
+/* Separators */
+    
+    :root:not([chromehidden~="toolbar"]) #appMenu-popup.cui-widget-panel toolbarseparator {
+        margin-inline-start: 10px !important;
+        --panel-separator-margin-vertical: 2px !important;
+        --panel-separator-margin: var(--panel-separator-margin-vertical) var(--panel-separator-margin-horizontal) !important;
+    } 
+    
+/* banner of -update available- */
+    
+    #appMenu-popup .panel-banner-item:not([disabled]):hover, #appMenu-popup .addon-banner-item:not([disabled]):hover {
+        background: var(--button-active-bgcolor) !important;
+    }
+    
+/* update notification circle */
+    
+    #PanelUI-menu-button[badge-status="update-available"]>.toolbarbutton-badge-stack>.toolbarbutton-badge, 
+    #PanelUI-menu-button[badge-status="update-downloading"]>.toolbarbutton-badge-stack>.toolbarbutton-badge, 
+    #PanelUI-menu-button[badge-status="update-manual"]>.toolbarbutton-badge-stack>.toolbarbutton-badge, 
+    #PanelUI-menu-button[badge-status="update-other-instance"]>.toolbarbutton-badge-stack>.toolbarbutton-badge, 
+    #PanelUI-menu-button[badge-status="update-restart"]>.toolbarbutton-badge-stack>.toolbarbutton-badge, 
+    #PanelUI-menu-button[badge-status="update-unsupported"]>.toolbarbutton-badge-stack>.toolbarbutton-badge {
+        margin: -7px -3px 0px !important;
+        margin-inline-end: -9px !important;
+    }
+
+/* ------------------------Icon account----------------------- */
+
+/* Gradient line on label Account only in maximized window */
+
+    :root:not([chromehidden~="toolbar"])[sizemode="maximized"] #appMenu-fxa-status2 {
+        padding-top: 4px !important;
+        margin-inline-start: var(--margin-left-icons-personal) !important;
+        border-top: 1px solid var(--panel-separator-color) !important;
+        border-image: linear-gradient(to left, transparent 7px,var(--general-color) 7px, 
+                        transparent calc(100% - var(--margin-left-icons-personal) - 8px), 
+                        transparent calc(100% - var(--margin-left-icons-personal) - 8px)) 1 !important;
+    }
+    
+    :root:not([chromehidden~="toolbar"])[sizemode="maximized"] #appMenu-fxa-status2[fxastatus="signedin"] {
+        padding-top: 2px !important;
+        margin-inline-start: 0px !important;
+    }
+    
+/* ---------------------------------------- Config for aligning icons in the hamburger menu ------------------------------------------- */
+    
+/* New margin only to hamburger menu maximized */
+    
+:root:not([chromehidden~="toolbar"])[sizemode="maximized"]{
+        
+    #appMenu-popup .subviewbutton:not(.subviewbutton-iconic, .toolbarbutton-text, [checked="true"])> .toolbarbutton-icon,                       /* Mayoría de botones */
+    #appMenu-zoom-controls2, #appMenu-zoom-controls, #appMenu-popup #synced-tabs-client-0,             
+    #appMenu-popup .subviewbutton.subviewbutton-iconic:not(.subviewbutton-back) image{                                                          /* iconos de enviar a dispositivo */
+        margin-inline-start: var(--margin-left-icons-personal) !important;
+    }
+    
+    #appMenu-popup #appMenu-fxa-status2 #appMenu-fxa-label2,
+    #appMenu-popup #fxa-manage-account-button,
+    #appMenu-popup #PanelUI-fxa-menu-syncnow-button{
+        padding-inline-start: calc(var(--margin-left-icons-personal) + 6px) !important;
+    }
+  }
+}
+
+/* Smaller menu in linux*/
+
+@media (-moz-platform: linux) {
+    :root {
+        --margin-left-icons-personal: 9px !important;
+    }
+    :root:not([chromehidden~="toolbar"])[sizemode="maximized"] #appMenu-popup {
+        --arrowpanel-menuitem-padding: 5px !important;
+    }
+  }
+}
