@@ -1,71 +1,5 @@
-/**
- * Decrease size of the sidebar header
- *
-
- #sidebar-header {
-   font-size: 1.2em !important;
-   padding: 2px 6px 2px 3px !important;
-  }
-  #sidebar-header #sidebar-close {
-    padding: 3px !important;
-  }
-  #sidebar-header #sidebar-close .toolbarbutton-icon {
-    width: 14px !important;
-    height: 14px !important;
-    opacity: 0.6 !important;
-  }
-*/
-/*
-@-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
-  .click-target-container *, .top-sites-list * {
-      color: #fff !important ;
-      text-shadow: 2px 2px 2px #222 !important ;
-  }
-
-  body::before {
-      content: "" ;
-      z-index: -1 ;
-      position: fixed ;
-      top: 0 ;
-      left: 0 ;
-      background: #0cf no-repeat url(img/bg.jpg) center ;
-      background-size: cover ;
-      width: 100vw ;
-      height: 100vh ;
-  }
-}
-*/
-
-/* ############# Required files ############## */
-
-@import url('components/ogx_root.css');
-@import url('components/ogx_root-personal.css');
-/* @import url('components/ogx_containers.css'); */
-@import url('components/ogx_urlbar-searchbar.css');
-@import url('components/ogx_customize-styles.css');
-@import url('components/ogx_sound.css');
-@import url('components/ogx_arrowpanel.css');
-@import url('components/ogx_contextual-menu.css');
-@import url('components/ogx_notifications.css');
-@import url('components/ogx_button-styles.css');
-@import url('components/ogx_library.css');
-/* @import url('components/ogx_menu.css'); */
-@import url('components/ogx_icons.css');
-
-/* ############## Extra Files ###############  */
-
-/* @import url('components/ogx_left-sidebar.css'); */
-@import url('components/ogx_oneline.css');
-@import url('components/ogx_autohide_bookmark-bar.css');
-@import url('components/ogx_main-image.css');
-
-/* ############# Your Personal File ##############  */
-
-@import url('components/ogx_tricks.css');
-
-
 #sidebar-header {
-  display: none;
+  /* display: none; */
   visibility: collapse !important;
 }
 
@@ -102,40 +36,16 @@
 }
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover {
   margin-right: calc((var(--wide-tab-width) - var(--thin-tab-width)) * -1) !important;
-}
-
+} 
 #main-window #titlebar {
   overflow: hidden;
-  transition: height 0s 0s !important;
+  transition: height 0.3s 0.3s !important;
 }
-
 /* Default state: Set initial height to enable animation */
-#main-window #titlebar { height: 3em !important; }
+/* #main-window #titlebar { height: 3em !important; } */
 #main-window[uidensity="touch"] #titlebar { height: 3.35em !important; }
 #main-window[uidensity="compact"] #titlebar { height: 2.7em !important; }
 /* Hidden state: Hide native tabs strip */
 #main-window[titlepreface*="XXX"] #titlebar { height: 0 !important; }
 /* Hidden state: Fix z-index of active pinned tabs */
 #main-window[titlepreface*="XXX"] #tabbrowser-tabs { z-index: 0 !important; }
-
-/*
-@-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
-  .click-target-container *, .top-sites-list * {
-      color: #fff !important ;
-      text-shadow: 2px 2px 2px #222 !important ;
-  }
-
-  body::before {
-      content: "" ;
-      z-index: -1 ;
-      position: fixed ;
-      top: 0 ;
-      left: 0 ;
-      background: #0cf no-repeat url(img/cherry-blossom-1260646.jpg) center ;
-      background-size: cover ;
-      width: 100vw ;
-      height: 100vh ;
-  }
-}
-*/
-

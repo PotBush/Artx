@@ -7,7 +7,7 @@
     "output": "DP-1", // to output for bar
     // Choose the order of the modules
     
-    "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
+    "modules-left": ["hyprland/workspaces"],
     
     "modules-center": ["clock"],
     
@@ -49,10 +49,8 @@
     "wlr/taskbar": {
         "format": "{icon}",
         "icon-size": 20,
-        "icon-theme": "papirus",
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "close"
+        "icon-theme": "Win11",
+        "tooltip-format": "{title}"
     },
     
     // Modules configuration
@@ -191,7 +189,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol-qt"
     },
     "custom/media": {
         "format": "{icon} {}",

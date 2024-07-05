@@ -110,13 +110,18 @@ inputbar {
    enabled:                       true;
    padding:                       10 0 0  10;
    text-color:                    #FFFFFF;
-   border-radius:                 60px;
+   //border:                        2px;
+   //border-color:                  #FFFFFF;
+   //border-radius:                 60px;
  }
 
  entry {
    padding:                       12;
    background-color:              @bg-alt;
    text-color:                    @fg;
+   //border:                        2px;
+   //border-color:                  #FFFFFF;
+   // border-radius:                 60px;
  }
 
  element {
