@@ -7,7 +7,7 @@
     "output": "DP-1", // to output for bar
     // Choose the order of the modules
     
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
     
     "modules-center": ["clock"],
     
@@ -28,29 +28,21 @@
     	"on-scroll-down": "hyprctl dispatch workspace r+1",
         "persistent-workspaces": {
             "*": [ 2,3,4,5 ] // 2-5 on every monitor
-            //"HDMI-A-1": [ 1 ]  but only workspace 1 on HDMI-A-1
+            // "DP-3": [ 1 ], // workspace 1 shown on DP-3
+            // "DP-1": [ 2, 3 ], // workspaces 2 and 3 shown on DP-1
         }
-    },
-
-    // Updates Count
-    "custom/updates": {
-        "format": "  {}",
-        "tooltip-format": "{}",
-        "escape": true,
-        "return-type": "json",       
-        "exec": "~/dotfiles/scripts/updates.sh",
-        "restart-interval": 60,
-        "on-click": "alacritty -e ~/dotfiles/scripts/installupdates.sh",
-        "tooltip": false
     },
 
 
     // taskbar
     "wlr/taskbar": {
+        "all-outputs": true,
         "format": "{icon}",
         "icon-size": 20,
-        "icon-theme": "Win11",
-        "tooltip-format": "{title}"
+        "icon-theme": "Eleven",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close"
     },
     
     // Modules configuration
@@ -63,6 +55,7 @@
             "unlocked": ""
         }
     },
+
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -198,9 +191,9 @@
         "format-icons": {
             "spotify": "",
             "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        }
+        //"escape": true,
+        //"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
 }
