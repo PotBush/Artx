@@ -2,7 +2,19 @@
 
 @-moz-document url("about:newtab"), url("about:home") {
     #root {
-        background-image: url("images/bg.jpg") !important;
-        background-size: cover !important;
+        background-image: url("newtab/wallpaper-dark6.png") !important;
+        background-size:  cover !important;
     }
 }
+
+
+/* Set background image for the settings (preferences) page */
+@-moz-document url("about:preferences") {
+    body {
+        background: url("newtab/wallpaper-dark6.png") !important;
+        background-size: cover;
+        /* background-color: #f0f0f050 !important; */
+    }
+    
+  }
+

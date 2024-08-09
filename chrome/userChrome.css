@@ -1,5 +1,13 @@
+/* Example: Dark Theme for Firefox */
+/* Change the background color of the browser */
+
+#TabsToolbar
+{
+  visibility: collapse;
+}
+
 #sidebar-header {
-  /* display: none; */
+  display: none;
   visibility: collapse !important;
 }
 
@@ -12,7 +20,14 @@
 :root {
   --thin-tab-width: 60px;
   --wide-tab-width: 300px;
+
+  --lwt-accent-color: #181818;
+  --lwt-accent-color-dark: #000000;
+  --lwt-text-color: #ffffff;
+  --lwt-toolbar-field-background-color: #181818;
+  --lwt-toolbar-field-focus: #181818;
 }
+
 #sidebar-box:not([sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]) {
   min-width: var(--wide-tab-width) !important;
   max-width: none !important;
@@ -49,3 +64,34 @@
 #main-window[titlepreface*="XXX"] #titlebar { height: 0 !important; }
 /* Hidden state: Fix z-index of active pinned tabs */
 #main-window[titlepreface*="XXX"] #tabbrowser-tabs { z-index: 0 !important; }
+
+
+/********************************  Color Theme  ********************************/
+
+/* Tab bar styling */
+#TabsToolbar {
+  background-color: var(--lwt-accent-color) !important;
+}
+
+/* Active tab styling */
+.tab-background[selected="true"] {
+  background-color: var(--lwt-accent-color-dark) !important;
+}
+
+/* Inactive tabs styling */
+.tab-background {
+  background-color: var(--lwt-accent-color) !important;
+}
+
+/* URL bar and search bar styling */
+.urlbar-input, .searchbar-textbox {
+  background-color: var(--lwt-toolbar-field-background-color) !important;
+  color: var(--lwt-text-color) !important;
+}
+
+/* Bookmark bar styling */
+#PersonalToolbar {
+  background-color: var(--lwt-accent-color) !important;
+  color: var(--lwt-text-color) !important;
+}
+
