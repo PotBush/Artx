@@ -1,0 +1,285 @@
+/*
+ * __        __          _                  ____  _         _       
+ * \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___  
+ *  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \ 
+ *   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/ 
+ *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___| 
+ *                 |___/                              |___/         
+ *  
+ */
+ 
+ * {
+     border: none;
+     font-family: Font Awesome, Roboto, Arial, sans-serif;
+     font-size: 14px;
+     color: white;
+     border-radius: 0px;
+    }
+window#waybar {
+    background-color: rgba(0,0,0,0.2);
+    border-bottom: 0px solid #ffffff;
+    /* color: #FFFFFF; */
+    background: transparent;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#waybar.empty #window {
+    background-color: transparent;
+  }
+
+#window {
+    color: white;
+    background: transparent;
+    padding: 0px 10px;
+    margin: 2px 5px 2px 5px;
+    border: 0px solid #ffffff;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button, #custom-wallpaper {
+    background: transparent;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+button:hover{
+    background: #181818;
+}
+
+
+#workspaces {
+    margin: 2px 1px 2px 5px;
+    padding: 0px 1px;
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+    font-weight: bold;
+    font-style: normal;
+    opacity: 0.8;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border: 2px solid #ffffff;
+    border-radius: 15px;
+    border: 0px;
+    color: #ffffff;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.4;
+}
+
+#workspaces button.active {
+    color: #0cf;
+    background-color: #0cf;
+    border-radius: 15px;
+    min-width: 0px;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
+#workspaces button:hover {
+    color: #ffffff;
+    background: transparent;
+    border-radius: 15px;
+    opacity:0.7;
+}
+
+#custom-exit {
+    font-size: 18px;
+}
+
+#custom-rotation,
+#custom-keyboard,
+#custom-wallpaper {
+    background-color: transparent;
+    color: #fff;            
+    padding: 0px 2px;                 
+    font-size: 32px;           
+    transition: background-color 0.3s ease; 
+}
+#custom-rotation:hover,
+#custom-keyboard:hover,
+#custom-exit:hover,
+#custom-wallpaper:hover {
+    color: #0cf;
+}
+
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+/* 
+#tooltip {
+    color: #fff;
+    background-color: transparent;
+    border-radius: 15px;
+    padding:20px;
+    margin:2px;
+}
+
+#tooltip label {
+    color: transparent;
+} */
+
+
+/* -----------------------------------------------------
+ * Taskbar
+ * ----------------------------------------------------- */
+
+ #taskbar {
+    background: transparent;
+    margin: 2px 0px 2px 0px;
+    padding:0;
+    border-radius: 15px;
+    font-weight: normal;
+    font-style: normal;
+    opacity:0.8;
+    border: 2px solid #ffffff;
+}
+
+#taskbar button {
+    margin:0;
+    border-radius: 15px;
+    padding: 0px 5px 0px 5px;
+}
+
+/* -----------------------------------------------------
+ * Clock
+ * ----------------------------------------------------- */
+
+ #clock {
+    background-color: transparent;
+    font-size: 16px;
+    color: #ffffff;
+    border-radius: 15px;
+    padding: 0px 5px 0px 5px;
+    margin: 2px 0px 2px 0px;
+    opacity:0.8;
+    border:2px solid #ffffff;   
+}
+
+/*-----module groups----*/
+.modules-right {
+	background: transparent;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 16px;
+    border-color: #ffffff;
+}
+.modules-center {
+	background-color:transparent;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 16px;
+}
+.modules-left {
+	background-color: transparent;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 16px;
+    border-color: #ffffff;
+}
+
+/* -----------------------------------------------------
+ * Workspaces 
+ * ----------------------------------------------------- */
+/*-----modules indv----*/
+#workspaces {
+    margin: 5px 0px 5px 0px;
+    padding:0;
+    background-color: transparent;
+    /* background-color: rgba(18, 18, 15, 0.8); */
+    color: #ffffff;
+    border: 2px;
+    border-radius: 16px;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border-radius: 15px;
+    border: 0px;
+    color: #ffffff;
+    background-color: rgba(255,255,255,0.5);
+    transition: all 0.3s ease-in-out;
+    opacity: 0.4;
+}
+
+#workspaces button.active {
+    color: #181818;
+    text-decoration-color: #181818;
+    background: #00ccff;
+    border-radius: 15px;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
+#workspaces button:hover {
+    color: #ffffff;
+    background: transparent;
+    border-radius: 15px;
+    opacity:0.7;
+}
+
+
+#battery,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#custom-power,
+#custom-menu,
+#idle_inhibitor {
+    padding: 0 5px;
+}
+#mode {
+    color: #cc3436;
+    font-weight: bold;
+}
+#custom-power {
+    background-color: rgba(0,119,179,0.6);
+    border-radius: 50px;
+    margin: 5px 5px;
+    padding: 1px 3px;
+}
+/*-----Indicators----*/
+#idle_inhibitor.activated {
+    color: #2dcc36;
+}
+#pulseaudio.muted {
+    color: #cc3436;
+}
+#battery.charging {
+    color: #2dcc36;
+}
+#battery.warning:not(.charging) {
+	color: #e6e600;
+}
+#battery.critical:not(.charging) {
+    color: #cc3436;
+}
+#temperature.critical {
+    color: #cc3436;
+}
+/*-----Colors----*/
+/*
+ *rgba(0,85,102,1),#005566 --> Indigo(dye)
+ *rgba(0,43,51,1),#002B33 --> Dark Green 
+ *rgba(0,153,153,1),#009999 --> Persian Green 
+ *
+ */
