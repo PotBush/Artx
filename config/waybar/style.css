@@ -6,15 +6,15 @@
  *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___| 
  *                 |___/                              |___/         
  *  
-*/
-
-* {
-    border: none;
-    font-family: Font Awesome, Roboto, Arial, sans-serif;
-    font-size: 14px;
-    color: #ffffff;
-    border-radius: 0px;
-}
+ */
+ 
+ * {
+     border: none;
+     font-family: Font Awesome, Roboto, Arial, sans-serif;
+     font-size: 14px;
+     color: white;
+     border-radius: 0px;
+    }
 window#waybar {
     background-color: rgba(0,0,0,0.2);
     border-bottom: 0px solid #ffffff;
@@ -24,11 +24,42 @@ window#waybar {
     transition-duration: .5s;
 }
 
-#workspaces {
-    margin: 2px 1px 3px 1px;
-    padding: 0px 1px;
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#waybar.empty #window {
+    background-color: transparent;
+  }
+
+#window {
+    color: white;
+    background: transparent;
+    padding: 0px 5px;
+    margin: 2px 5px 2px 5px;
+    border: 0px solid #ffffff;
     border-radius: 15px;
-    border: 0px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button, #custom-wallpaper {
+    background: transparent;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+button:hover{
+    background: #181818;
+}
+
+
+#workspaces {
+    margin: 2px 1px 2px 5px;
+    padding: 0px 1px;
+    border: 2px solid #ffffff;
+    border-radius: 15px;
     font-weight: bold;
     font-style: normal;
     opacity: 0.8;
@@ -39,6 +70,7 @@ window#waybar {
 #workspaces button {
     padding: 0px 5px;
     margin: 4px 3px;
+    border: 2px solid #ffffff;
     border-radius: 15px;
     border: 0px;
     color: #ffffff;
@@ -63,40 +95,40 @@ window#waybar {
     opacity:0.7;
 }
 
+#custom-exit {
+    font-size: 18px;
+}
+
+
+#custom-wallpaper {
+    background-color: transparent;
+    color: #fff;            
+    padding: 0px 0px;                 
+    font-size: 26px;           
+    transition: background-color 0.3s ease; 
+}
+
+#custom-exit:hover,
+#custom-wallpaper:hover {
+    color: #0cf;
+}
+
 /* -----------------------------------------------------
  * Tooltips
  * ----------------------------------------------------- */
-
- tooltip {
-    border-radius: 10px;
-    background-color: rgba(0,0,0,0.2);
-    opacity:0.8;
+/* 
+#tooltip {
+    color: #fff;
+    background-color: transparent;
+    border-radius: 15px;
     padding:20px;
-    margin:0px;
+    margin:2px;
 }
 
-tooltip label {
+#tooltip label {
     color: transparent;
-}
+} */
 
-/* -----------------------------------------------------
- * Window
- * ----------------------------------------------------- */
-
-#window {
-    background: #ffffff;
-    margin: 5px 15px 5px 0px;
-    padding: 2px 10px 0px 10px;
-    border-radius: 12px;
-    color:transparent;
-    font-size:16px;
-    font-weight:normal;
-    opacity:0.8;
-}
-
-window#waybar.empty #window {
-    background-color:transparent;
-}
 
 /* -----------------------------------------------------
  * Taskbar
@@ -125,7 +157,7 @@ window#waybar.empty #window {
 
  #clock {
     background-color: transparent;
-    font-size: 18px;
+    font-size: 16px;
     color: #ffffff;
     border-radius: 15px;
     padding: 0px 5px 0px 5px;
@@ -199,7 +231,6 @@ window#waybar.empty #window {
 }
 
 
-
 #battery,
 #cpu,
 #memory,
@@ -212,7 +243,7 @@ window#waybar.empty #window {
 #custom-power,
 #custom-menu,
 #idle_inhibitor {
-    padding: 0 10px;
+    padding: 0 5px;
 }
 #mode {
     color: #cc3436;

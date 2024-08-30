@@ -2,17 +2,18 @@
     "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 2, // Waybar height (to be removed for auto height)
-    //"width": 1900, // Waybar width
+    "width": 1900, // Waybar width
     //"spacing": 8, // Gaps between modules (4px)
-    //"output": "DP-1", // to output for bar
+    "output": "DP-1", // to output for bar
     // Choose the order of the modules
     
-    "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
+    "modules-left": ["hyprland/workspaces", "wlr/taskbar", "hyprland/window"],
     
     "modules-center": ["clock"],
     
-    "modules-right": ["custom/updates","pulseaudio","network","cpu","memory","battery","battery#bat2","custom/exit"],
-    
+    "modules-right": ["cpu","memory","pulseaudio","backlight","network","battery","battery#bat2","tray","custom/wallpaper","custom/exit"],
+
+    // workspace
     "hyprland/workspaces": {
         "on-click": "activate",
         "active-only": false,
@@ -28,31 +29,48 @@
     	"on-scroll-down": "hyprctl dispatch workspace r+1",
         "persistent-workspaces": {
             "*": [ 2,3,4,5 ] // 2-5 on every monitor
-            //"HDMI-A-1": [ 1 ]  but only workspace 1 on HDMI-A-1
+            // "DP-3": [ 1 ], // workspace 1 shown on DP-3
+            // "DP-1": [ 2, 3 ], // workspaces 2 and 3 shown on DP-1
         }
     },
 
-    // Updates Count
-    "custom/updates": {
-        "format": "  {}",
-        "tooltip-format": "{}",
-        "escape": true,
-        "return-type": "json",       
-        "exec": "~/dotfiles/scripts/updates.sh",
-        "restart-interval": 60,
-        "on-click": "alacritty -e ~/dotfiles/scripts/installupdates.sh",
-        "tooltip": false
+    "toplevel": {
+        "format": "{title}",
+        "max-length": 50
     },
 
+    "custom/wallpaper": {
+    "tooltip": false,
+    "format": "",
+    "on-click": "~/.config/hypr/script/change_wallpaper.sh"
+    },
+
+    "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}",
+    "format-icons": ["", ""]
+    },
 
     // taskbar
     "wlr/taskbar": {
+        "all-outputs": true,
         "format": "{icon}",
         "icon-size": 20,
-        "icon-theme": "Eleven",
+        "icon-theme": "ePapirus-Dark",
         "tooltip-format": "{title}",
         "on-click": "activate",
-        "on-click-middle": "close"
+        "on-click-middle": "close",
+        "active-icons": true,
+        "max-length": 50
+    },
+
+    //focus windows title
+    "hyprland/window": {
+	"format": "{}",
+	"rewrite": {
+		    "(.*) - Mozilla Firefox": "🌎 $1",
+		    "(.*) - kitty": "> [$1]"
+	    }
     },
     
     // Modules configuration
@@ -65,6 +83,7 @@
             "unlocked": ""
         }
     },
+
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -107,13 +126,14 @@
 	    "max-length": 25,
         "format": "<span size='16pt'>{:%I:%M:%S %p}</span>",
         "format-alt": "<span size='16pt'>{:%R 󰃭 %d/%m/%y}</span>",
-        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "tooltip": false
+        /* "tooltip-format": "<tt><big>{calendar}</big></tt>",
         "calendar": {
             "format": {
                 "months": "<span color='#ffffff'><b>{}</b></span>",
                 "today": "<span color='#00ccff'><b>{}</b></span>"
             }
-        }
+        } */
         //"tooltip-format": "<big>{:%H %B}</big>\n<tt><small>{calendar}</small></tt>",
         //"format-alt": "{:%d/%m/%Y}"
     },
@@ -171,7 +191,7 @@
         "format-linked": "{ifname} (No IP) 󰈀",
         "format-disconnected": "Disconnected ⚠",
         //"format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click": "wofi-wifi.sh",	// https://raw.githubusercontent.com/cristobaltapia/dotfiles_sway/master/home/.config/wofi/scripts/wofi-wifi.sh
+        "on-click": "wofi-wifi.sh"	// https://raw.githubusercontent.com/cristobaltapia/dotfiles_sway/master/home/.config/wofi/scripts/wofi-wifi.sh
 	//"on-click": "nmtui",
     },
     "pulseaudio": {
@@ -191,7 +211,8 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol-qt",
+        "tooltip": false
     },
     "custom/media": {
         "format": "{icon} {}",
@@ -200,9 +221,9 @@
         "format-icons": {
             "spotify": "",
             "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        }
+        //"escape": true,
+        //"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     }
 }
