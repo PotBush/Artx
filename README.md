@@ -24,7 +24,7 @@ List of programs and tools I use.
 | Color Theme 🎨    | [nwg-loock](https://github.com/nwg-piotr/nwg-look) |
 | Lockscreen 🔒     | [swaylock](https://github.com/hyprwm/hyprlock)  |
 | Login Menu 🚪     | [sddm](https://github.com/sddm/sddm)          |
-| Music Player 🎵   | [spotify](https://aur.archlinux.org/packages/spotify-adblock)      |
+| Music Player 🎵   | [spotify](https://spicetify.app/)      |
 | Visualiser 📊     | [vis](https://github.com/dpayne/cli-visualizer)          |
 | Pomodoro 🍅       | [tomato-c](https://github.com/gabrielzschmitz/Tomato.C)      |
 | Others 🌱         | [cbonsai](https://github.com/mhzawadi/homebrew-cbonsai) |
