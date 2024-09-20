@@ -69,6 +69,8 @@ Have system theme enabled for first install
 Go to the `about:support` page for user foalder
 Go in the user foalder and in that folder, create a new folder named chrome (If it doesnt already exist).
 Copy Artx/chrome into your chrome folder.
+Set the theme on `about:config` --> `user.theme.artx` = true
+set the stayle search `ultima`
 
 And then go to `Sidebery settings` > `General` > `Preface value`, enable it and set it to XXX.
 
