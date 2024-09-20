@@ -24,7 +24,7 @@ List of programs and tools I use.
 | Color Theme 🎨    | [nwg-loock](https://github.com/nwg-piotr/nwg-look) |
 | Lockscreen 🔒     | [swaylock](https://github.com/hyprwm/hyprlock)  |
 | Login Menu 🚪     | [sddm](https://github.com/sddm/sddm)          |
-| Music Player 🎵   | [spotify](https://spicetify.app/)      |
+| Music Player 🎵   | [spotify](https://aur.archlinux.org/packages/spotify-adblock)      |
 | Visualiser 📊     | [vis](https://github.com/dpayne/cli-visualizer)          |
 | Pomodoro 🍅       | [tomato-c](https://github.com/gabrielzschmitz/Tomato.C)      |
 | Others 🌱         | [cbonsai](https://github.com/mhzawadi/homebrew-cbonsai) |
@@ -36,15 +36,56 @@ List of programs and tools I use.
 
 ## All package you need
 hyprland, wayland, dolphin, eww, fish, gcolor3, hyperpiker, kitty, kvantum, nvidia-dkms, nwg-look, papirus-icon-theme, pavucontroll, polkit-kde-agent, Qt5-graphicaleffects, Qt5-imageformats, Qt5ct, Qt6ct, rofi-wayland, rofimoji, swaylock-effects, swww, waybar, wireplump, wlogout, swappy, vscode
-### Arch - paru AUR
+### Arch - YAY AUR
 ```
-paru -S hyprland wayland dolphin eww-git fish gcolor3 hyperpiker kitty kvantum nvidia-dkms nwg-look papirus-icon-theme pavucontroll polkit-kde-agent qt5-graphicaleffects qt5-imageformats qt5ct qt6ct rofi-wayland rofimoji swaylock-effects swww waybar wlogout wireplump visual-studio-code-bin
+yay -S hyprland wayland dolphin eww-git fish gcolor3 hyperpiker kitty kvantum nvidia-dkms nwg-look papirus-icon-theme pavucontroll polkit-kde-agent qt5-graphicaleffects qt5-imageformats qt5ct qt6ct rofi-wayland rofimoji swaylock-effects swww waybar wlogout wireplump visual-studio-code-bin
+```
+### Firefox theme
+![](.source/Firefox.png)
+applies the following settings, go to `about:config` and set all of the following to `true`:
+```
+toolkit.legacyUserProfileCustomizations.stylesheets
+layers.acceleration.force-enabled
+gfx.webrender.all
+gfx.webrender.enabled
+layout.css.backdrop-filter.enabled
+svg.context-properties.content.enabled
+    
+# LINUX ONLY - WORKAROUND FOR BAR HIDING ON DRAG EVENT
+widget.gtk.ignore-bogus-leave-notify = 1
 
 ```
+### ADD-ONS 
+extensions requested to install:
+- [Sidebery](https://addons.mozilla.org/it/firefox/addon/sidebery/)
+- [uBlock Origin](https://addons.mozilla.org/it/firefox/addon/ublock-origin/)
+#### recommended:
+- [Firefox Multi-Account Containers](https://addons.mozilla.org/it/firefox/addon/multi-account-containers/)
+- [PopUpOFF](https://addons.mozilla.org/it/firefox/addon/popupoff/)
+- Privacy Badger
+- [darkreader](https://addons.mozilla.org/it/firefox/addon/darkreader/)
+
+Have system theme enabled for first install
+Go to the `about:support` page for user foalder
+Go in the user foalder and in that folder, create a new folder named chrome (If it doesnt already exist).
+Copy Artx/chrome into your chrome folder.
+
+And then go to `Sidebery settings` > `General` > `Preface value`, enable it and set it to XXX.
+
+Now You also need to remove indent when the bar is collapsed, or you won't be able to see all tabs
+
+Go to `SideBery settings` --> `Styles editor` and add:
+```
+#root:not(:hover){
+  --tabs-indent: 0;
+}
+```
+
 
 ## 📝 Credits
 - Readmi.md file Design: [iXiuny](https://github.com/iXiuny)
 - sddm-theme - sddm theme from [sddm-flower-theme](https://github.com/Keyitdev/sddm-flower-theme)
+- Parts of firefox theme [FF-ULTIMA](https://github.com/soulhotel/FF-ULTIMA)
 
 ## 📸 More Screenshots
 ### Desktop 🖥️
