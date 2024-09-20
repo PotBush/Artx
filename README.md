@@ -18,7 +18,7 @@ List of programs and tools I use.
 | File Manager 📁   | [dolphin](https://apps.kde.org/dolphin/)/[ranger](https://github.com/ranger/ranger)      |
 | Editor 📝         | [neovim](https://github.com/neovim/neovim) / [vs-code](https://code.visualstudio.com/)     |
 |   IDE 📦            |   [Intellij](https://www.jetbrains.com/idea/)    |
-| Browser 🌐        | [brave](https://brave.com/) / [librewolf](https://librewolf.net/) |
+| Browser 🌐        | [brave](https://brave.com/) / [firefox]([https://librewolf.net/](https://www.mozilla.org/firefox/) |
 | Bar 📊            | [waybar](https://github.com/Alexays/Waybar)      |
 | Launcher 🚀       | [rofi](https://github.com/davatorium/rofi)          |
 | Color Theme 🎨    | [nwg-loock](https://github.com/nwg-piotr/nwg-look) |
