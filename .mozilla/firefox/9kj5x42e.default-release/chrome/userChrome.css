@@ -1,0 +1,123 @@
+/* MPL 2.0 https://github.com/soulhotel/FF-ULTIMA/blob/main/LICENSE */
+
+/*  
+Change tab size?
+Change autohide option?
+Want to use sidebery instead? + More.
+Come to the modification page: https://github.com/soulhotel/FF-ULTIMA/blob/main/doc/Modification.md
+*/
+
+@import url(theme/all-global-positioning.css);
+
+@import url(theme/all-color-schemes.css);
+
+@import url(theme/position-findbar.css);
+@import url(theme/position-window-controls.css);
+
+@import url(theme/function-mini-button-bar.css);
+@import url(theme/function-sidebar-autohide.css);
+@import url(theme/function-sidebery-autohide.css);
+@import url(theme/function-containers-indicator.css);
+@import url(theme/function-privatemode-indicator.css); /* sourced from MOG */
+@import url(theme/function-urlbar.css);
+@import url(theme/function-extensions-menu.css);
+@import url(theme/function-safeguard.css);
+
+@import url(theme/theme-context-menu.css);
+@import url(theme/theme-menubar.css);
+@import url(theme/theme-statuspanel.css);
+@import url(theme/theme-PIP.css);
+@import url(theme/theme-tab-audio-indicator.css);
+
+@import url(theme/override-linux.css);
+@import url(theme/override-styles.css);
+
+
+
+#TabsToolbar
+{
+  visibility: collapse;
+}
+
+#sidebar-header {
+  display: none;
+  visibility: collapse !important;
+}
+
+/* Hide splitter */
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] + #sidebar-splitter {
+    display: none !important;
+  }
+  
+  /* Shrink sidebar until hovered */
+  :root {
+    --thin-tab-width: 60px;
+    --wide-tab-width: 300px;
+  
+    --lwt-accent-color: #181818;
+    --lwt-accent-color-dark: #000000;
+    --lwt-text-color: #ffffff;
+    --lwt-toolbar-field-background-color: #181818;
+    --lwt-toolbar-field-focus: #181818;
+  }
+  
+  #sidebar-box:not([sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]) {
+    min-width: var(--wide-tab-width) !important;
+    max-width: none !important;
+  }
+  #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+    overflow: hidden !important;
+    position: relative !important;
+    transition: all 300ms !important;
+    /*transition: all 0ms 0s !important;*/
+    min-width: var(--thin-tab-width) !important;
+    max-width: var(--thin-tab-width) !important;
+    z-index: 2;
+  }
+  #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover,
+  #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar {
+    /*transition-delay: 0s !important;*/
+    transition: all 300ms !important;
+    min-width: var(--wide-tab-width) !important;
+    max-width: var(--wide-tab-width) !important;
+    z-index: 1;
+  }
+  #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover {
+    margin-right: calc((var(--wide-tab-width) - var(--thin-tab-width)) * -1) !important;
+  } 
+  #main-window #titlebar {
+    overflow: hidden;
+    transition: height 0.3s 0.3s !important;
+  }
+  /* Default state: Set initial height to enable animation */
+  /* #main-window #titlebar { height: 3em !important; } */
+  #main-window[uidensity="touch"] #titlebar { height: 3.35em !important; }
+  #main-window[uidensity="compact"] #titlebar { height: 2.7em !important; }
+  /* Hidden state: Hide native tabs strip */
+  #main-window[titlepreface*="XXX"] #titlebar { height: 0 !important; }
+  /* Hidden state: Fix z-index of active pinned tabs */
+  #main-window[titlepreface*="XXX"] #tabbrowser-tabs { z-index: 0 !important; }
+  
+  
+  /********************************  Color Theme  ********************************/
+  
+  /* Tab bar styling */
+  #TabsToolbar {
+    background-color: var(--lwt-accent-color) !important;
+  }
+  
+  /* Active tab styling */
+  .tab-background[selected="true"] {
+    background-color: var(--lwt-accent-color-dark) !important;
+  }
+  
+  /* Inactive tabs styling */
+  .tab-background {
+    background-color: var(--lwt-accent-color) !important;
+  }
+  
+  /* URL bar and search bar styling */
+  .urlbar-input, .searchbar-textbox {
+    background-color: var(--lwt-toolbar-field-background-color) !important;
+    color: var(--lwt-text-color) !important;
+  }

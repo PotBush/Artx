@@ -1,0 +1,1 @@
+{"defaultHandlersVersion":{},"mimeTypes":{"application/pdf":{"action":3,"extensions":["pdf"]}},"schemes":{"mailto":{"stubEntry":true,"handlers":[null,{"name":"Gmail","uriTemplate":"https://mail.google.com/mail/?extsrc=mailto&url=%s"}]},"x-github-desktop-dev-auth":{"action":4},"unityhub":{"action":4}},"isDownloadsImprovementsAlreadyMigrated":false}

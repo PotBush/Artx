@@ -1,0 +1,5 @@
+/*
+@import url('all-global-theme-MYTHEME.css') (-moz-bool-pref: "user.theme.light.MYTHEME");
+*/
+
+@import url('all-global-theme-artx.css') (-moz-bool-pref: "user.theme.artx");
