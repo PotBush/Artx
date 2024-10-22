@@ -6,4 +6,5 @@ docker run -it --rm \
         --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
         --volume="$HOME/.Xauthority:/root/.Xauthority:rw" \
         tor-browser \
-        /bin/bash 
+        /bin/bash
+

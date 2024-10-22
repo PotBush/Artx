@@ -1,6 +1,7 @@
 #!/bin/bash
 sleep 0.1
 swaylock --screenshots \
+ --effect-greyscale \
  --clock --timestr "%I:%M:%S %p" --datestr "%a, %e of %B" \
  --indicator --indicator-radius 100 --indicator-thickness 7 \
  --effect-blur 7x5 --effect-scale 1 \
