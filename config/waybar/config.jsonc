@@ -7,11 +7,11 @@
     "output": "DP-1", // to output for bar
     // Choose the order of the modules
     
-    "modules-left": ["hyprland/workspaces", "wlr/taskbar", "hyprland/window"],
+    "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
     
     "modules-center": ["clock"],
     
-    "modules-right": ["cpu","memory","pulseaudio","backlight","network","battery","battery#bat2","tray","custom/wallpaper","custom/exit"],
+    "modules-right": ["cpu","memory","pulseaudio","backlight","network","battery","battery#bat2","tray","custom/exit"],
 
     // workspace
     "hyprland/workspaces": {
@@ -34,14 +34,32 @@
         }
     },
 
+    "custom/weather": {
+	    "format": "{}",
+	    "format-alt": "{alt}: {}",
+	    "format-alt-click": "click",
+	    "interval": 3600,
+	    "return-type": "json",
+	    "exec": "$HOME/.config/hypr/UserScripts/Weather.sh",
+	    //"exec": "$HOME/.config/hypr/UserScripts/Weather.py",
+	    "exec-if": "ping wttr.in -c1",
+	    "tooltip": true,
+    },
+
     "toplevel": {
         "format": "{title}",
         "max-length": 50
     },
 
+    "custom/screenshot":{
+    "tooltip": false,
+    "format": " ",
+    "on-click": "screenshot"
+    },
+
     "custom/wallpaper": {
     "tooltip": false,
-    "format": "",
+    "format": " ",
     "on-click": "~/.config/hypr/script/change_wallpaper.sh"
     },
 
@@ -51,12 +69,19 @@
     "format-icons": ["", ""]
     },
 
+    // This is a custom cava visualizer
+    "custom/cava_mviz": {
+	    "exec": "$HOME/.config/hypr/scripts/WaybarCava.sh",
+	    "format": "{}"
+    },
+
+
     // taskbar
     "wlr/taskbar": {
         "all-outputs": true,
         "format": "{icon}",
         "icon-size": 20,
-        "icon-theme": "ePapirus-Dark",
+        "icon-theme": "Eleven",
         "tooltip-format": "{title}",
         "on-click": "activate",
         "on-click-middle": "close",
@@ -146,11 +171,18 @@
     },
     "custom/exit": {
         "format": "{icon}",
-        "format-icons": " ⏻  ",
-        "icon-size": 18,
+        "format-icons": " <span font='24px'>⏻</span>",
+        //"format-size": 64,
         "on-click": "wlogout",
         "tooltip": false
     },
+    // "custom/screenschot": {
+    //     "format": "{icon}",
+    //     "format-icons": "   ",
+    //     //"format-size": 64,
+    //     "on-click": " ~/.config/hypr/scripts/ScreenShot/DistroboxScreenShot.sh",
+    //     "tooltip": false
+    // },
 
     "temperature": {
         // "thermal-zone": 2,

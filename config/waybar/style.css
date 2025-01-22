@@ -8,7 +8,7 @@
  *  
  */
  
- * {
+* {
      border: none;
      font-family: Font Awesome, Roboto, Arial, sans-serif;
      font-size: 14px;
@@ -43,7 +43,7 @@ window#waybar.hidden {
     font-weight: bold;
 }
 
-button, #custom-wallpaper {
+button, #custom-wallpaper, #custom-screenshot{
     background: transparent;
     color: #fff;
     border-radius: 5px;
@@ -53,7 +53,6 @@ button, #custom-wallpaper {
 button:hover{
     background: #181818;
 }
-
 
 #workspaces {
     margin: 2px 1px 2px 5px;
@@ -79,6 +78,8 @@ button:hover{
     opacity: 0.4;
 }
 
+work
+
 #workspaces button.active {
     color: #0cf;
     background-color: #0cf;
@@ -95,12 +96,7 @@ button:hover{
     opacity:0.7;
 }
 
-#custom-exit {
-    font-size: 18px;
-}
-
-
-#custom-wallpaper {
+#custom-wallpaper, #custom-screenshot {
     background-color: transparent;
     color: #fff;            
     padding: 0px 0px;                 
@@ -109,6 +105,7 @@ button:hover{
 }
 
 #custom-exit:hover,
+#custom-screenshot:hover,
 #custom-wallpaper:hover {
     color: #0cf;
 }
